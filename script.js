@@ -23,6 +23,17 @@ function onKeyPress(event) {
     label.htmlFor = "flexCheckDefault";
     label.innerText = todoInput.value;
 
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn-close";
+    div.appendChild(button);
+    button.addEventListener("click", onClick);
+
+    function onClick() {
+      div.remove();
+      // todoList.removeChild(div);
+    }
+
     todoInput.value = "";
   }
 }
