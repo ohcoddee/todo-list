@@ -34,6 +34,18 @@ function onKeyPress(event) {
       // todoList.removeChild(div);
     }
 
+    input.addEventListener("click", onClickChechbox);
+    // function onClickChechbox() {
+    //   div.removeChild("checkbox");
+    //   div.appendChild("checkbox");
+    // }
+
+    function onClickChechbox() {
+      div.remove();
+      // todoList.removeChild(div);
+      todoList.appendChild(div);
+    }
+
     todoInput.value = "";
   }
 }
