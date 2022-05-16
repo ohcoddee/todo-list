@@ -6,46 +6,58 @@ todoInput.addEventListener("keypress", onKeyPress);
 function onKeyPress(event) {
   if (event.code === "Enter") {
     const div = document.createElement("div");
-    const input = document.createElement("input");
-    const label = document.createElement("label");
-    todoList.appendChild(div);
-
-    div.className = "form-check";
-    div.appendChild(input);
-    div.appendChild(label);
-
-    input.className = "form-check-input";
-    input.type = "checkbox";
-    input.value = "";
-    input.id = "flexCheckDefault";
-
-    label.className = "form-check-label";
-    label.htmlFor = "flexCheckDefault";
-    label.innerText = todoInput.value;
-
+    const checkbox = document.createElement("input");
+    const todoText = document.createElement("input");
     const button = document.createElement("button");
     button.type = "button";
     button.className = "btn-close";
-    div.appendChild(button);
-    button.addEventListener("click", onClick);
 
-    function onClick() {
+    todoList.appendChild(div);
+    div.className = "form-check";
+    div.appendChild(checkbox);
+    div.appendChild(todoText);
+    div.appendChild(button);
+
+    checkbox.className = "form-check-input";
+    checkbox.type = "checkbox";
+    checkbox.value = "";
+    checkbox.id = "flexCheckDefault";
+
+    todoText.className = "form-check-label";
+    // todoText.htmlFor = "flexCheckDefault";
+    todoText.value = todoInput.value;
+    todoText.style.border = "none";
+    todoText.style.background = "none";
+    todoText.style.outline = "none";
+
+    button.addEventListener("click", onClickButton);
+    function onClickButton() {
       div.remove();
-      // todoList.removeChild(div);
     }
 
-    input.addEventListener("click", onClickChechbox);
-    // function onClickChechbox() {
-    //   div.removeChild("checkbox");
-    //   div.appendChild("checkbox");
-    // }
-
-    function onClickChechbox() {
-      div.remove();
-      // todoList.removeChild(div);
+    checkbox.addEventListener("click", onClickCheckbox);
+    function onClickCheckbox() {
+      todoList.removeChild(div);
       todoList.appendChild(div);
+      todoText.style.textDecoration = "line-through";
     }
 
     todoInput.value = "";
   }
 }
+
+// function onClickButton(event) {
+//   const button = event.target;
+//   const div = button.parentNode;
+//   todoList.removeChild(div);
+// }
+
+// function onClickCheckbox(event) {
+//   const checkbox = event.target;
+//   const div = button.parentNode;
+//   const todoText = checkbox.nextSibling;
+
+//   todoList.remove(div);
+//   todoList.appendChild(div);
+//   todoText.style.textDecoration = "line-through";
+// }
