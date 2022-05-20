@@ -24,12 +24,8 @@ function onKeyPress(event) {
     checkbox.value = "";
     checkbox.id = "flexCheckDefault";
 
-    todoText.className = "form-check-label";
-    // todoText.htmlFor = "flexCheckDefault";
     todoText.value = todoInput.value;
-    todoText.style.border = "none";
-    todoText.style.background = "none";
-    todoText.style.outline = "none";
+    todoText.className = "reset-input";
 
     button.addEventListener("click", onClickButton);
     function onClickButton() {
@@ -41,11 +37,9 @@ function onKeyPress(event) {
       const checked = checkbox.checked;
       // console.log("지금 상태: ", checked);
       if (checked) {
-        // todoList.removeChild(div);
         doneList.appendChild(div);
         todoText.style.textDecoration = "line-through";
       } else {
-        // doneList.removeChild(div);
         todoList.appendChild(div);
         todoText.style.textDecoration = "none";
       }
@@ -54,19 +48,3 @@ function onKeyPress(event) {
     todoInput.value = "";
   }
 }
-
-// function onClickButton(event) {
-//   const button = event.target;
-//   const div = button.parentNode;
-//   todoList.removeChild(div);
-// }
-
-// function onClickCheckbox(event) {
-//   const checkbox = event.target;
-//   const div = button.parentNode;
-//   const todoText = checkbox.nextSibling;
-
-//   todoList.remove(div);
-//   todoList.appendChild(div);
-//   todoText.style.textDecoration = "line-through";
-// }

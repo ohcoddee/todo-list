@@ -1,6 +1,28 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: center / contain no-repeat
-    url("https://images.unsplash.com/photo-1652039033561-5191b3f8983e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60");
+  background: center / cover no-repeat
+    url("https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.write-your-todo {
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: solid;
+  margin-bottom: 20px;
+  width: 300px;
+  padding-left: 60px;
+  color: #da9d80;
+}
+
+.reset-input {
+  border: none;
+  background: none;
+  outline: none;
 }
