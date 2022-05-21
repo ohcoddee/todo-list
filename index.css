@@ -25,4 +25,13 @@ body {
   border: none;
   background: none;
   outline: none;
+  /* color: #709eae; */
+}
+
+.todo-list .reset-input {
+  color: rebeccapurple;
+}
+
+.done-list .reset-input {
+  color: forestgreen;
 }
