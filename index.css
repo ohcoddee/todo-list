@@ -19,17 +19,19 @@ body {
   width: 300px;
   padding-left: 60px;
   color: #da9d80;
+
+  position: absolute;
+  top: 30%;
 }
 
 .reset-input {
   border: none;
   background: none;
   outline: none;
-  /* color: #709eae; */
 }
 
 .todo-list .reset-input {
-  color: rebeccapurple;
+  color: dodgerblue;
 }
 
 .done-list .reset-input {
